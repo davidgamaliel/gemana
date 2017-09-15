@@ -16,6 +16,7 @@
 	        </div>
         </div>
     @endif
+{{-- 
     <div class="main-search-container" id="initFront">
 	    <div class="main-search-inner">
 	        <div class="container">
@@ -53,6 +54,7 @@
 	        </div>
 	    </div>
 	</section>
+ --}}
 
 	<!-- Info Section -->
 	<div class="container">

@@ -29,7 +29,7 @@
 <body>
 
 <!-- Wrapper -->
-<div id="Wrapper">
+<div id="Wrapper" class="initFront">
 
     <!-- Header Container
     ================================================== -->
@@ -56,7 +56,7 @@
                     <nav id="navigation" class="style-1">
                         <ul id="responsive">
 
-                        <li><a class="current" href="#">Home</a>
+                        {{-- <li><a class="current" href="#">Home</a>
                             <ul>
                                 <li><a href="index.html">Home 1</a></li>
                                 <li><a href="index-2.html">Home 2</a></li>
@@ -119,7 +119,7 @@
                                 <li><a href="pages-404.html">404 Page</a></li>
                                 <li><a href="pages-icons.html">Icons</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         
                     </ul>
                     </nav>
@@ -212,7 +212,11 @@
 </div>
 <!-- Wrapper / End -->
 
-
+<style>
+    .initFront {
+        background-image: url("{{ URL::asset('images/back.png') }}");
+    }
+</style>
 
 <!-- Scripts
 ================================================== -->
