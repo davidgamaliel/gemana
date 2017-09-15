@@ -15,7 +15,7 @@ class GerejaController extends Controller
 		$tipeGereja = TipeGereja::all();
 		$tipeGerejas = array();
 		foreach ($tipeGereja as $tipe) {
-			$tipeGerejas[$tipe->id] = $tipe->nama;
+			$tipeGerejas[$tipe->id] = $tipe->nama . ' - ' . $tipe->nama_lengkap;
 		}
 		return view('gereja.tambah', ['tipe_gerejas' => $tipeGerejas]);
 	}

@@ -60,7 +60,7 @@
                         <div class="row with-forms">
                             <!-- Status -->
                             <div class="col-md-6">
-                                <h5>Tipe Gereja</h5>
+                                <h5>Dogma </h5>
                                 <?php echo Form::select('tipe_gereja', $tipe_gerejas, null, ['placeholder' => '-- Pilih --']); ?>
                             </div>
                             <!-- Type -->

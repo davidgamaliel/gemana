@@ -13,6 +13,7 @@
     {{-- <link href="../css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/colors/main.css" id="colors"> --}}
+    <link rel="shortcut icon" href="{{{ URL::asset('favicon.ico') }}}">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" >
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" >
     <link rel="stylesheet" href="{{ URL::asset('css/icons.css') }}" >
