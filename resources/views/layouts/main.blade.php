@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" >
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" >
     <link rel="stylesheet" href="{{ URL::asset('css/icons.css') }}" >
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}" >
+    {{-- <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}" > --}}
     <link rel="stylesheet" href="{{ URL::asset('css/colors/main.css') }}" id="colors" >
 
      <link rel="stylesheet" href="//codeorigin.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
@@ -143,6 +143,7 @@
     </div>
     <!-- Footer
     ================================================== -->
+    @section('footer')
     <div id="footer" class="sticky-footer">
         <!-- Main -->
         <div class="container">
@@ -203,6 +204,7 @@
         </div>
 
     </div>
+    @show
     <!-- Footer / End -->
 
 

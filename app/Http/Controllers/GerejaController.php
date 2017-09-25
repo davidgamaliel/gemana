@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\TipeGereja;
 use App\Gereja;
+use App\JadwalIbadah;
 use Illuminate\Support\Facades\Redirect;
 
 class GerejaController extends Controller
@@ -48,5 +49,32 @@ class GerejaController extends Controller
             $result[]=['id'=>$v->id, 'value' =>$v->nama];
         }
         return response()->json($result);
+    }
+
+    public function getAllGereja()
+    {
+        $all = Gereja::all();
+        return $all;
+    }
+
+    public function getGereja($id)
+    {
+        $gereja = Gereja::find($id);
+        return $gereja;
+    }
+
+    public function allGereja()
+    {
+        $gereja = Gereja::paginate(9);
+        return view('gereja.list', ['gerejas' => $gereja]);
+    }
+
+    public function detail($id)
+    {
+        $gereja = Gereja::find($id);
+        $jadwal = $gereja->jadwalIbadah;
+        //var_dump($jadwal);
+
+        return view('gereja.detail', ['gereja' => $gereja, 'jadwal' => $jadwal]);
     }
 }

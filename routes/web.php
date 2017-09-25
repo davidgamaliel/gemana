@@ -27,6 +27,15 @@ Route::get("autoCompleteGereja", array('as'=>'autoCompleteGereja', 'uses'=>'Gere
 
 Route::get('getJadwalGereja/{id}', 'JadwalIbadahController@allJadwalIbadahId')->name('getJadwalGereja');
 
+Route::get('/gereja/all', 'GerejaController@allGereja');
+
+Route::get('/gereja/detail/{id}', 'GerejaController@detail')->name('gereja.detail');
+
+
+// API
+// Route::get('/gereja/all', 'GerejaController@getAllGereja');
+Route::get('/gereja/{id}', 'GerejaController@getGereja');
+
 /*Route::get('/gereja/jadwal/tambah', function(){
 	return view('gereja.tambahJadwal');
 });*/

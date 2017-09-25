@@ -94,6 +94,7 @@
                 var thisVm = this;
                 $('#gerejaId').val(ui.item.id);
                 //this.getJadwalGereja();
+                $('#taab').find('tr').remove();
                 $.get('/getJadwalGereja/' + $('#gerejaId').val(), function(data, status) {
                     setJadwalGereja(data, status);
                 });
@@ -135,11 +136,6 @@
             var cell = tabcell.insertCell(0);
             cell.innerHTML = jam;
         }
-
-        /*var ls = document.getElementsByName('jadwalIbadah[]');
-        if(ls !== null && ls.length > 0) {
-            ls.item('input').remove();
-        }*/
         
         $('#formJadwal').append('<input type="hidden" name="jadwalIbadah[]" value="' + jam + '" >');
         

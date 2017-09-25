@@ -46,14 +46,14 @@
                         <div class="row with-forms">
                             <div class="col-md-6">
                                 <h5>Kota <i class="tip" data-tip-content="kota dimana gereja bereda"></i></h5>
-                                <?php echo Form::text('kota'); ?>
+                                <?php echo Form::text('kota', null, ['id'=>'kota']); ?>
                             </div>
                         </div>
                         <!-- Title -->
                         <div class="row with-forms">
                             <div class="col-md-6">
                                 <h5>Nama Gereja <i class="tip" data-tip-content="nama gereja"></i></h5>
-                                <?php echo Form::text('nama_gereja'); ?>
+                                <?php echo Form::text('nama_gereja', null, ['id'=>'nama_gereja']); ?>
                             </div>
                         </div>
                         <!-- Row -->
@@ -154,6 +154,11 @@
           document.getElementById('us3-lon').value = place.geometry.location.lng();
 
           console.log('isi posisi : ', place);
+          document.getElementById('nama_gereja').value = place.name;
+          document.getElementById('kota').value = getCityName(place);
+          //$('#nama_gereja').value = place.name;
+          //$('#kota').value = getCityName(place);
+          //getCityName(place);
 
           // If the place has a geometry, then present it on a map.
           if (place.geometry.viewport) {
@@ -184,6 +189,24 @@
           infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
           infowindow.open(map, marker);
         });
+      }
+
+      function getCityName(place) {
+          let addComp = place.address_components;
+          let city = {};
+          for(i=0; i<addComp.length; i++) {
+            var types = addComp[i].types
+            var lv3 = types.find(o => {
+                return o === 'administrative_area_level_3';
+            });
+            var lv2 = types.find(o => {
+                return o === 'administrative_area_level_2';
+            });
+            if (typeof lv2 != 'undefined') city.lv2 = addComp[i];
+            if (typeof lv3 != 'undefined') city.lv3 = addComp[i];
+          }
+          console.log('kota : ', city);
+          return city.lv3.long_name + ', ' + city.lv2.long_name;
       }
 </script>
 @endsection

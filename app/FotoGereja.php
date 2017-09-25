@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class JadwalIbadah extends Model
+class FotoGereja extends Model
 {
-    protected $table = 'jadwal_ibadah';
+    protected $table = 'foto_gereja';
 
     public function gereja()
     {
