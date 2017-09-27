@@ -15,12 +15,12 @@ class Gereja extends Model
 
     public function jadwalIbadah()
     {
-    	return $this->hasMany('App\jadwalIbadah', 'gereja_id', 'id');
+    	return $this->hasMany('App\JadwalIbadah', 'gereja_id', 'id');
     }
 
     public function getFirstImg()
     {
-    	$img = asset('images/gereja');//URL::asset('images/gereja/');
+    	$img = asset('/images/gereja');//URL::asset('images/gereja/');
     	$file = $this->fotoGereja()->first();
     	if($file) {
     		return $img . '/' . $file->foto;

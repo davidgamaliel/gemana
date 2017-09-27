@@ -39,6 +39,7 @@
                 @endforeach
             </div>
             <div class="col-lg-12">
+                <nav class="pagination"></nav>
                 {{ $gerejas->links() }}
             </div>
             {{-- <div class="col-lg-12">
